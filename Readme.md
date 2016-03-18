@@ -28,8 +28,8 @@ To install python packages I recommend to use pip installer (https://pip.pypa.io
 
 ####<a name="db"></a>1. Database creation
 #####1.1. Connect to PostgreSQL as administrative user
-&nbsp;&nbsp;&nbsp;&nbsp;By default it is <b>postgres</b> user. 
-&nbsp;&nbsp;&nbsp;&nbsp;<i>e.g. for Linux:</i>
+&nbsp;&nbsp;&nbsp;&nbsp;By default it is <b>postgres</b> user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<i>e.g. for Linux:</i><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<code>sudo -u postgres psql</code>
 #####1.2. Create PostgreSQL role for application
 &nbsp;&nbsp;&nbsp;&nbsp;<code>CREATE USER *user_name*;</code>
