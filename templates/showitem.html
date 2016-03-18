@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+	<section>
+		<h1>{{ book.title }}</h1>
+        {% if auth %}{% if user.id == book.owner %}
+        <a href="/catalog/{{ book.id }}/edit">Edit</a>
+        <a href="/catalog/{{ book.id }}/delete">Delete</a>
+        {% endif %}{% endif %}
+		<!-- <img src="{{ book.img_url }}"> -->
+		<p>Category:&nbsp;{{ book.category }}</p>
+		<p>Publication year:&nbsp;{{ book.pub_year }}</p>
+		<p>Author:&nbsp;{{ book.author }}</p>
+		<p>Description:&nbsp;{{ book.description }}</p>
+		<p>Owner:&nbsp;{{ book.owner_name }}</p>
+		<p>Added:&nbsp;{{ book.only_date }}</p>
+
+		<a href="./items" class="button">Back to category</a>
+	</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base_cat.html' %}
+{% block section %}
+	<section>
+		<h2>Recent books</h2>
+		{% for book in recent %}
+			<a href="/catalog/{{book.category}}/{{book.id}}">{{book.title}}</a>&nbsp;({{book.category}})<br>
+		{% endfor %}
+	</section>
+{% endblock %}

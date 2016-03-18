@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<section>
+	{% if auth and valid %}
+	<h1>Delete a book</h1>
+	<form method="post" action="/catalog/{{ book.id }}/delete">
+		<p>
+			Are you sure you want to delete?
+		</p>
+        <input type="submit" value="Confirm">
+	</form>
+	{% else %}
+	<p>You are not authorized to view this page. Either log in or it is not your book.</p>
+	{% endif %}
+</section>
+{% endblock %}

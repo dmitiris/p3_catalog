@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block body %}
+	<section>
+        {% if auth %}
+		<h1>Add new book</h1>
+		<form method="post" action="/catalog/add">
+            <table>
+                <tr>
+                    <td>Title:</td>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>
+                    <td>Author:</td>
+                    <td><input type="text" name="author"></td>
+                </tr>
+                <tr>
+                    <td>Publication year:</td>
+                    <td><input type="text" name="pub_year"></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><input type="textarea" name="description"></td>
+                </tr>
+                <tr>
+                    <td>Category:</td>
+                    <td>
+                        <select name="category">
+                            {% for cat in categories %}
+                            <option value="{{cat.name}}">{{cat.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit"></td>
+                </tr>
+            </table>
+        </form>
+        {% else %}
+        <p>You are not authorized to view this page. Please log in.</p>
+        {% endif %}
+	</section>
+{% endblock %}

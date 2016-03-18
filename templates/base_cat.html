@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+	<nav>
+		{% if auth %}
+
+		<a href="/catalog/add" class="button">Add new book</a>
+		{% endif %}
+		<h2>Categories</h2>
+		{% for item in categories %}
+			<a href="/catalog/{{item.name}}/items">{{item.name}}</a><br>
+		{% endfor %}
+	</nav>
+	{% block section %}{% endblock %}
+{% endblock %}

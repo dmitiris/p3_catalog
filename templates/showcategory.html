@@ -1,0 +1,15 @@
+{% extends 'base_cat.html' %}
+{% block section %}
+	<section>
+
+		<h2>Items in category</h2>
+		{% for book in books %}
+			<a href="/catalog/{{ book.category }}/{{ book.id }}">{{ book.title }}</a>
+			{% if auth %}{% if user.id == book.owner %}
+            <a href="/catalog/{{ book.id }}/edit">Edit</a>
+            <a href="/catalog/{{ book.id }}/delete">Delete</a>
+            {% endif %}{% endif %}
+		    <br>
+		{% endfor %}
+	</section>
+{% endblock %}
